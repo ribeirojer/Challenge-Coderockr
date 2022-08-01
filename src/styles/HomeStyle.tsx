@@ -14,8 +14,8 @@ export const CardWrapper = style.div`
     width: 50vw;
 `;
 export const Img = style.img`
-    width: 16vw;
-    height: 16vw;
+    width: ${props => props.width || "16vw"};
+    height: ${props => props.width || "16vw"};
 `;
 export const Texts = style.div`
     width: 32vw;
@@ -38,4 +38,23 @@ export const Svg = style.svg`
     position: relative;
     top: 11rem;
     right: 1rem;
+`;
+
+/* Bigs */
+export const CardBigWrapper = style.div`
+    display: flex;
+    justify-content: ${props => props.about || "flex-end"};
+`;
+export const Cardbig = style.div`
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    margin-top: 60px;
+    background: #fff;
+    width: 66vw;
+`;
+export const TextsBig = style.div`
+    width: 33vw;
+    height: 16vw;
+    padding: 1rem 2rem;
 `;
