@@ -1,15 +1,16 @@
-import { Wrapper, Logo, Posts, Contact } from "../styles/HeaderStyle"
+import { Link } from "react-router-dom"
+import { Wrapper, Logo, Navbar, Posts, Contact } from "../styles/HeaderStyle"
 
 type Props = {}
 
 const Header = (props: Props) => {
   return (
     <Wrapper>
-        <Logo>Rockr Blog</Logo>
-        <div>
-            <Posts>Posts</Posts>
+        <Link to={"/"}><Logo>Rockr Blog</Logo></Link>
+        <Navbar>
+            <Link to={"/"}><Posts>Posts</Posts></Link>
             <Contact>Contact</Contact>
-        </div>
+        </Navbar>
     </Wrapper>
   )
 }

@@ -16,6 +16,9 @@ export const Logo = style.span`
     margin-left: 16vw;
     width: 48vw;
 `;
+export const Navbar = style.div`
+    margin-left: 33vw;
+`;
 export const Posts = style.span`
     font-weight: 500;
     font-size: 32px;
