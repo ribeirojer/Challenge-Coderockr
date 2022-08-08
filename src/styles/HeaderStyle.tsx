@@ -29,4 +29,5 @@ export const Contact = style.span`
     font-weight: 500;
     font-size: 32px;
     line-height: 38px;
+    cursor: pointer;
 `;
