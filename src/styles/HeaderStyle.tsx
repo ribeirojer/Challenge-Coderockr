@@ -8,6 +8,10 @@ export const Wrapper = style.header`
     height: 100px;
     display: flex;
     align-items: center;
+    position: fixed;
+    top: 0;
+    z-index: 2;
+    width: 100%;
 `;
 export const Logo = style.span`
     font-weight: 700;
