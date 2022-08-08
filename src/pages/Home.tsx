@@ -4,13 +4,16 @@ import useFetch from "../hooks/useFetch";
 import { SectionOne } from "../styles/HomeStyle"
 import CardT from '../components/CardT';
 import Loader from '../components/Loader';
+import {  useState } from 'react';
 type Props = {}
 
 const Home = (props: Props) => {
   
+  const [items, setItems] = useState<number[]>([1])
   const url: string = "https://stormy-shelf-93141.herokuapp.com/";
   const { data, isLoading, error } = useFetch(`${url}articles`);
-  
+  var raiz = document.getElementById('root');
+
   if(isLoading){
     return <Loader />
   }
@@ -18,21 +21,34 @@ const Home = (props: Props) => {
     return <p>Houve um problema...</p>
   }
 
+  function onScroll (): void{
+    if((window.pageYOffset + window.innerHeight) > (raiz?.scrollHeight-10)){
+      setItems([...items, (items.length+1)]);
+    }
+    if(items.length > 93) setItems([0])
+  }
+  window.addEventListener("scroll", onScroll);
+
   return (
     <>
-      <SectionOne>
-        <CardA data={data[0]} />
-        <CardA data={data[1]} />
-      </SectionOne>
-      
-      <CardT pos="rigth" data={data[2]} />
+      {items.map((e:any)=>{
+        return (
+          <div key={e}>
+            <SectionOne>
+              <CardA data={data[e+0]} />
+              <CardA data={data[e+1]} />
+            </SectionOne>
+            
+            <CardT pos="rigth" data={data[e+2]} />
 
-      <SectionOne>
-        <CardB data={data[3]} />
-        <CardB data={data[4]} />
-      </SectionOne>
+            <SectionOne>
+              <CardB data={data[e+3]} />
+              <CardB data={data[e+4]} />
+            </SectionOne>
 
-      <CardT pos="left" data={data[5]} />
+            <CardT pos="left" data={data[e+5]} />
+        </div>)
+      })}
     </>
   )
 }
