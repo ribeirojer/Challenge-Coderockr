@@ -1,6 +1,7 @@
 import { Post, Wrapper, ImgPost, TextsPost, ImageAndText, Date, Author, Title, Article } from '../styles/PostStyle';
 import useFetch from '../hooks/useFetch';
 import { useParams } from 'react-router-dom';
+import Loader from '../components/Loader';
 
 type Props = {}
 
@@ -11,7 +12,7 @@ const Posts = (props: Props) => {
   const { id } = useParams();
 
   if(isLoading){
-    return <p>Carregando...</p>
+    return <Loader />
   }
   if(error){
     return <p>Houve um problema...</p>

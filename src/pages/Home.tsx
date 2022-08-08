@@ -3,6 +3,7 @@ import CardB from '../components/CardB';
 import useFetch from "../hooks/useFetch";
 import { SectionOne } from "../styles/HomeStyle"
 import CardT from '../components/CardT';
+import Loader from '../components/Loader';
 type Props = {}
 
 const Home = (props: Props) => {
@@ -11,7 +12,7 @@ const Home = (props: Props) => {
   const { data, isLoading, error } = useFetch(`${url}articles`);
   
   if(isLoading){
-    return <p>Carregando...</p>
+    return <Loader />
   }
   if(error){
     return <p>Houve um problema...</p>
