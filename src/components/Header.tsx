@@ -2,7 +2,7 @@ import { useState } from "react"
 import { Link } from "react-router-dom"
 import { Wrapper, Logo, Navbar, Posts, Contact, Imagem } from "../styles/HeaderStyle"
 import { Svg } from "../styles/ModalStyle"
-import Modal from "react-modal"
+import Modal, { Styles } from "react-modal"
 import ModalContent from "./ModalContent"
 
 type Props = {}
@@ -53,7 +53,7 @@ const Header = (props: Props) => {
           </Navbar>
           <Imagem onClick={openModal} src="https://coderockr.com/assets/images/hand-white.svg" alt="" />
       </Wrapper>
-      <Modal isOpen={modalIsOpen} onRequestClose={closeModal} contentLabel="Example Modal" style={customStyles}>
+      <Modal isOpen={modalIsOpen} onRequestClose={closeModal} contentLabel="Example Modal" style={customStyles as Styles}>
         <Svg onClick={closeModal} width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M28 2.82L25.18 0L14 11.18L2.82 0L0 2.82L11.18 14L0 25.18L2.82 28L14 16.82L25.18 28L28 25.18L16.82 14L28 2.82Z" fill="#2D2D2D"/></Svg>
         <ModalContent />

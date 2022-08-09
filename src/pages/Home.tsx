@@ -22,7 +22,7 @@ const Home = (props: Props) => {
   }
 
   function onScroll (): void {//a cada scroll verifica se a altura do scroll alcança o fim da página
-    if((window.pageYOffset + window.innerHeight) > (raiz?.scrollHeight-10)){
+    if((window.pageYOffset + window.innerHeight) > (raiz?.scrollHeight!-10)){
       setItems([...items, (items.length+1)]);
     }
     if(items.length > 93) setItems([0])//infinite scroll reinicia quando exibe 93 items
