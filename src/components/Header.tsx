@@ -10,7 +10,7 @@ type Props = {}
 const Header = (props: Props) => {
   
   const [modalIsOpen, setIsOpen] = useState(false);
-  const customStyles = {
+  const customStyles = {//estilos do modal
     content: {
       top: '50%',
       left: '50%',
@@ -30,7 +30,7 @@ const Header = (props: Props) => {
     },
   };
 
-  if(window.outerWidth <= 360){
+  if(window.outerWidth <= 360){//responsividade do modal
     customStyles.content.padding = '1rem 2rem';
     customStyles.content.width = '80vw';
   }

@@ -25,7 +25,7 @@ const Posts = (props: Props) => {
     return `${monthNames[index]} ${date.slice(8, 10)},  ${date.slice(0, 4)}`;
   }
 
-  const post:any = data.filter((po: any)=>{
+  const post:any = data.filter((po: any)=>{//aqui é filtrado o post selecionado
     if(id===po.id)
       return po;
   })[0]

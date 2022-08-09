@@ -2,7 +2,7 @@ import style from "styled-components";
 
 type Props = {}
 
-const Loadero = style.div`
+const Load = style.div`
     animation: is-rotating 1s infinite;
     border: 6px solid #e5e5e5;
     border-radius: 50%;
@@ -22,7 +22,7 @@ const Loadero = style.div`
 
 const Loader = (props: Props) => {
   return (
-    <Loadero></Loadero>
+    <Load></Load>
   )
 }
 

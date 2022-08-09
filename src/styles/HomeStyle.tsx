@@ -71,7 +71,10 @@ export const Svg = style.svg`
     }
 `;
 export const Articles = style.p`
-    font-size: 0.8rem;
+    font-size: 0.9rem;
+    @media (max-width: 360px) {
+        font-size: 0.8rem;
+    }
 `;
 export const SvgCardB = style.svg`
     position: absolute;
