@@ -41,7 +41,7 @@ const Header = (props: Props) => {
   return (
     <>
       <Wrapper>
-          <Link to={"/"}><Logo>Rockr Blog</Logo></Link>
+          <Logo><Link to={"/"}>Rockr Blog</Link></Logo>
           <Navbar>
               <Link to={"/"}><Posts>Posts</Posts></Link>
               <Contact onClick={openModal}>Contact</Contact>

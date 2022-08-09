@@ -19,15 +19,29 @@ export const Logo = style.span`
     line-height: 43px;
     margin-left: 16vw;
     width: 48vw;
+
+    @media (max-width: 360px) {
+        width: unset;
+        font-size: 36px;
+        margin-left: 2rem;
+    }
 `;
 export const Navbar = style.div`
     margin-left: 33vw;
+    @media (max-width: 360px) {
+        display: none;
+        margin-left: unset;
+    }
 `;
 export const Posts = style.span`
     font-weight: 500;
     font-size: 32px;
     line-height: 38px;
     margin-right: 118px;
+    
+    @media (max-width: 360px) {
+        margin-right: unset;
+    }
 `;
 export const Contact = style.span`
     font-weight: 500;
