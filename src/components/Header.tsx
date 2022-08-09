@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { Link } from "react-router-dom"
-import { Wrapper, Logo, Navbar, Posts, Contact } from "../styles/HeaderStyle"
+import { Wrapper, Logo, Navbar, Posts, Contact, Imagem } from "../styles/HeaderStyle"
 import { Svg } from "../styles/ModalStyle"
 import Modal from "react-modal"
 import ModalContent from "./ModalContent"
@@ -30,6 +30,11 @@ const Header = (props: Props) => {
     },
   };
 
+  if(window.outerWidth <= 360){
+    customStyles.content.padding = '1rem 2rem';
+    customStyles.content.width = '80vw';
+  }
+
   function openModal() {
     setIsOpen(true);
   }
@@ -46,6 +51,7 @@ const Header = (props: Props) => {
               <Link to={"/"}><Posts>Posts</Posts></Link>
               <Contact onClick={openModal}>Contact</Contact>
           </Navbar>
+          <Imagem onClick={openModal} src="https://coderockr.com/assets/images/hand-white.svg" alt="" />
       </Wrapper>
       <Modal isOpen={modalIsOpen} onRequestClose={closeModal} contentLabel="Example Modal" style={customStyles}>
         <Svg onClick={closeModal} width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">

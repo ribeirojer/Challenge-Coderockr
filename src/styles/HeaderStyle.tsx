@@ -12,6 +12,11 @@ export const Wrapper = style.header`
     top: 0;
     z-index: 2;
     width: 100%;
+
+    @media (max-width: 360px) {
+        padding: 0 2rem;
+        justify-content: space-between;
+    }
 `;
 export const Logo = style.span`
     font-weight: 700;
@@ -23,14 +28,12 @@ export const Logo = style.span`
     @media (max-width: 360px) {
         width: unset;
         font-size: 36px;
-        margin-left: 2rem;
+        margin-left: 0;
     }
 `;
 export const Navbar = style.div`
-    margin-left: 33vw;
     @media (max-width: 360px) {
         display: none;
-        margin-left: unset;
     }
 `;
 export const Posts = style.span`
@@ -48,4 +51,13 @@ export const Contact = style.span`
     font-size: 32px;
     line-height: 38px;
     cursor: pointer;
+`;
+export const Imagem = style.img`
+    width: 50px;
+    height: 50px;
+    display: none;
+    
+    @media (max-width: 360px) {
+        display: block;
+    }
 `;

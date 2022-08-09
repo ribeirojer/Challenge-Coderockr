@@ -8,6 +8,9 @@ export const Title = style.span`
     display: flex;
     justify-content: center;
     margin: 0 0 1rem 0;
+    @media (max-width: 360px) {
+        margin: unset;
+    }
 `;
 export const Subtitle = style.span`
     font-size: 1rem;
@@ -43,6 +46,11 @@ export const Svg = style.svg`
     position: absolute;
     top: 2rem;
     right: 2rem;
+    @media (max-width: 360px) {
+        width: 18px;
+        top: 1rem;
+        right: 1rem;
+    }
 `;
 export const SvgButton = style.svg`
     margin-right: 1rem;
